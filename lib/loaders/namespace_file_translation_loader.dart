@@ -48,7 +48,7 @@ class NamespaceFileTranslationLoader extends FileTranslationLoader {
 
     try {
       _decodedMap[namespace] =
-          await loadFile("${composeFileName()}/$namespace");
+          await loadFile("$namespace/${composeFileName()}/$namespace");
     } catch (e) {
       MessagePrinter.debug('Error loading translation $e');
       await _loadTranslationFallback(namespace);
